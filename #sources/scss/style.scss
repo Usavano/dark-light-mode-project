@@ -1,0 +1,112 @@
+// Подключаем обнуление
+@import 'nullStyle.scss';
+
+// Подключаем шрифты
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Roboto:wght@400;500;600&display=swap');
+
+//Переменные
+$ff-primary: 'Roboto', sans-serif;
+$ff-secondary: 'Open Sans', sans-serif;
+
+// Default Theme
+:root, [data-theme="default"] {
+    --clr-bgc: #fff;
+    --clr-font: #282c35;
+    --clr-primary: #d23669;
+    --clr-grey: #64748b;
+    --clr-btn: #fff;
+}
+// Dark Theme
+[data-theme="dark"] {
+    --clr-bgc: #282c35;
+    --clr-font: #fff;
+    --clr-primary: #ffa7c4;
+    --clr-grey: #cbd5e1;
+    --clr-btn: #282c35;
+}
+
+.wrapper {
+    min-height: 100vh;
+    overflow: hidden;
+    background: var(--clr-bgc);
+    color: var(--clr-font);
+    transition: all 0.3s linear;
+}
+._container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.header {
+    &__body {
+        padding: 32px 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__logo {
+        text-transform: capitalize;
+        color: var(--clr-font);
+        letter-spacing: 2px;
+        font: {
+            family: $ff-primary;
+            size: 2.5rem;
+            weight: 400;
+        }
+    }
+    &__toggler {
+        padding: 4px 10px;
+        border-radius: 5px;
+        background: var(--clr-primary);
+        text-transform: capitalize;
+        color: var(--clr-btn);
+        letter-spacing: 2px;
+        font: {
+            family: $ff-secondary;
+            size: .9rem;
+            weight: 600;
+        }
+    }
+}
+
+.page {
+    .articles-block {
+        &__body {
+            padding: 50px 0;
+        }
+        .artcl {
+            margin: 0 0 60px 0;
+            & *:not(:last-child) {
+                margin: 0 0 8px 0;
+            }
+            &__title {
+                text-transform: capitalize;
+                color: var(--clr-primary);
+                font: {
+                    family: $ff-secondary;
+                    size: 1.8rem;
+                    weight: 700;
+                }
+            }
+            &__date {
+                color: var(--clr-grey);
+                letter-spacing: 1.2px;
+                font: {
+                    family: $ff-secondary;
+                    size: .85rem;
+                    weight: 400;
+                }
+            }
+            &__text {
+                color: var(--clr-font);
+                letter-spacing: .8px;
+                font: {
+                    family: $ff-secondary;
+                    size: .8rem;
+                    weight: 400;
+                }
+            }
+        }
+    }
+}
